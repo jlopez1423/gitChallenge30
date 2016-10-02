@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Bubble Scores</title>
+<meta charset="utf-8">
+<script>
+var bubbleData = [60, 50, 60, 58, 54, 54,
+			58, 50, 52, 54, 48, 69,
+			34, 55, 51, 52, 44, 51,
+			69, 64, 66, 55, 52, 61,
+			46, 31, 57, 52, 44, 18,
+			41, 53, 55, 61, 51, 44];
+
+listResults(bubbleData);
+//How many tests did we do?
+console.log("Bubble Tests: " + (bubbleData.length));
+highestScore(bubbleData);
+getIndices(bubbleData);
+
+function listResults(data){
+	for(var i = 0; i < data.length; i++ ){
+		console.log("Bubble solution: #" + i+ " " + "score: " + data[i]);
+	}
+}
+
+function highestScore(data){
+	var max = Math.max(...data);
+	console.log("The highest bubble score is: " + max);
+}
+
+function getIndices(data){
+	var temp = [];
+	var j = 0;
+	for(var i = 0; i < data.length; i++){
+		if(data[i] == 69){
+			temp[j] = i;
+			j++;
+		}
+	}
+	console.log("Solutions with highest score: " + "# " + temp.toString());
+}
+
+
+
+</script>
+</head>
+<body></body>
+
+</html>
